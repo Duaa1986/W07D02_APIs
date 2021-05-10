@@ -38,6 +38,11 @@ res.status(201);
 res.json(newUser);
 
 })
+app.get("/fname/first-user",(req,res)=>{
+  res.status(201);
+  res.json(users[0]);
+  
+  })
 
 app.get("/",(req,res)=>{
 
