@@ -28,9 +28,24 @@ const users = [
       res.json(found);
   }else {
       res.status(404);
-      res.josn("user not found")
+      res.json("user not found")
   }
 });
+app.post("/create/user",(req,res)=>{
+const newUser = { name:req.body.name,age :req.body.age};
+users.push(newUser);
+res.status(201);
+res.json(newUser);
+
+})
+
+app.get("/",(req,res)=>{
+
+    res.status(201);
+    res.json( "hello world");
+    
+    })
+
   app.listen(port,()=>{
 console.log(`the server run on http://localhost:${port}`)
   })
